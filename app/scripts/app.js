@@ -16,7 +16,8 @@ angular
         'ngSanitize',
         'ui.router',
         'ngMaterial',
-        'meetMeApp.login'
+        'meetMeApp.login',
+        'meetMeApp.signup'
     ])
     .config(function($stateProvider, $locationProvider, $urlRouterProvider) {
         $locationProvider.hashPrefix('');
