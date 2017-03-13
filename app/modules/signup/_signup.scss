@@ -1,11 +1,13 @@
 .signup-div{
-	text-align: center;
-	.signup-image-class{
-		height: 462px;
-		margin-right: 40px;
-	}
-	.signup-button{
-		width: 250px;
+	.signup-image-div{
+		height: 600px;
+		.signup-image-class{
+			height: 450px;
+			margin-right: 40px;
+		}
+		.signup-button{
+			width: 250px;
+		}
 	}
 	.signup-footer-div{
 		text-align: center;
@@ -25,4 +27,10 @@
 	}
 	
 }
+
+
+.signup-button-div{
+	text-align: center;
+
+	}
 

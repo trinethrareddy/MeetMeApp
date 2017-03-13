@@ -1,11 +1,14 @@
 .login-div{
-	text-align: center;
-	.login-image-class{
-		height: 462px;
-		margin-right: 40px;
+	.login-image-div{
+		height: 600px;
+		.login-image-class{
+			height: 450px;
+			margin-right: 40px;
+			}
+		.login-button{
+			width: 250px;
+			margin-left: 150px;
 		}
-	.login-button{
-		width: 250px;
 	}
 	.forgot-button{
 		width: 250px;
@@ -27,5 +30,9 @@
 		}
 	}
 	
+}
+
+.login-button-div{
+	text-align: center;
 }
 
