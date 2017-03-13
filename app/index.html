@@ -24,8 +24,6 @@
     <![endif]-->
     <!-- Add your site or application content here -->
     <nav class="navbar navbar-default">
-
-
         <div class="container-fluid navbar-class">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -62,31 +60,40 @@
     <div class="container-fluid footer-div">
         <div class="footer-innerdiv">
             <div class="col-md-3 col-sm-3 col-xs-3">
-                <div><p>Features</p>
-                <p>Download</p>
-                <p>Security</p>
-                <p>FAQ</p></div>
+                <div>
+                    <p>Features</p>
+                    <p>Download</p>
+                    <p>Security</p>
+                    <p>FAQ</p>
+                </div>
             </div>
             <div class="col-md-3 col-sm-3 col-xs-3">
-                <div><p>About</p>
-                <p>Career</p>
-                <p>Brand Centre</p>
-                <p>Get in Touch</p>
-                <p>Blog</p></div>
+                <div>
+                    <p>About</p>
+                    <p>Career</p>
+                    <p>Brand Centre</p>
+                    <p>Get in Touch</p>
+                    <p>Blog</p>
+                </div>
             </div>
             <div class="col-md-3 col-sm-3 col-xs-3">
-                <div><p>Mac/Pc</p>
-                <p>Andorid</p>
-                <p>iphone</p>
-                <p>Windows Phone</p>
-                <p>Black berry</p>
-                <p>Nokia</p></div>
+                <div>
+                    <p>Mac/Pc</p>
+                    <p>Andorid</p>
+                    <p>iphone</p>
+                    <p>Windows Phone</p>
+                    <p>Black berry</p>
+                    <p>Nokia</p>
+                </div>
             </div>
             <div class="col-md-3 col-sm-3 col-xs-3">
-                <div><p>FAQ</p>
-                <p>Twitter</p>
-                <p>Facebook</p></div>
-        </div>   </div>
+                <div>
+                    <p>FAQ</p>
+                    <p>Twitter</p>
+                    <p>Facebook</p>
+                </div>
+            </div>
+        </div>
     </div>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>
@@ -117,6 +124,7 @@
     <!-- endbuild -->
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
+    <!-- <script src="scripts/apis.js"></script> -->
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/about.js"></script>
     <script src="modules/login/loginModule.js"></script>
@@ -124,6 +132,18 @@
     <script src="modules/signup/signupModule.js"></script>
     <script src="modules/signup/signupController.js"></script>
     <!-- endbuild -->
+
+    <script type="text/javascript">
+        (function() {
+        var p = document.createElement('script');
+        p.type = 'text/javascript';
+        p.async = true;
+        p.src = "https://apis.google.com/js/clients.js?onload=onLoadFunction";
+        var s = document.getElementByTagName('script')[0];
+        s.parentNode.insertBefore(p, s);
+
+    })();
+    </script>
 </body>
 
 </html>

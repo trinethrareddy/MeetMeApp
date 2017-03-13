@@ -57,3 +57,11 @@ angular
         })
 
     });
+
+
+//Google Login
+
+function onLoadFunction(){
+    gapi.client.setApiKey('AIzaSyDeXfVywR8aZjQOKNl7mi05CJfdtR5a8E8');
+    gapi.client.load('plus','v1',function(){});
+}

@@ -1,4 +1,4 @@
-<md-card>
+<md-card ng-controller='loginCtrl'>
     <div layout='row' class="login-div">
         <div class="login-image-div" flex-lg="40" flex-md='40' flex-sm="40" flex-xs="40">
             <img class="login-image-class" src="./images/14.jpg">
@@ -37,13 +37,15 @@
                 <div layout="column" class="login-footer-div">
                     <h4><b>LOG IN WITH</b></h4>
                     <div class="login-icon-div">
-                        <span class="login-icon"><i class="fa fa-facebook" aria-hidden="true"></i></span>
-                        <span class="login-icon-class"><i class="fa fa-twitter" aria-hidden="true"></i></span>
-                        <span class="login-icon-class"><i class="fa fa-google" aria-hidden="true"></i></span>
-                        <span class="login-icon-class"><i class="fa fa-yahoo" aria-hidden="true"></i></span>
+                        <md-button ng-click='onGoogleLogin()'><span class="login-icon"><i class="fa fa-facebook" aria-hidden="true"></i></span></md-button>
+                        <md-button><span class="login-icon-class"><i class="fa fa-twitter" aria-hidden="true"></i></span></span></md-button>
+                        <md-button><span class="login-icon-class"><i class="fa fa-google" aria-hidden="true"></i></span></md-button>
+                        <md-button><span class="login-icon-class"><i class="fa fa-yahoo" aria-hidden="true"></i></span></md-button>      
                     </div>
                 </div>
             </md-card-footer>
+            <p>{{gmail.username}}</p>
+            <p>{{gmail.email}}</p>
         </div>
     </div>
 </md-card>
