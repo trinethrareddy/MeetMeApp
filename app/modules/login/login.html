@@ -1,5 +1,6 @@
+
 <md-card>
-    <div layout='row' class="login-div">
+    <div layout='row' class="login-div" ng-controller="loginCtrl">
         <div class="login-image-div" flex-lg="40" flex-md='40' flex-sm="40" flex-xs="40">
             <img class="login-image-class" src="./images/14.jpg">
         </div>
@@ -37,7 +38,7 @@
                 <div layout="column" class="login-footer-div">
                     <h4><b>LOG IN WITH</b></h4>
                     <div class="login-icon-div">
-                        <span class="login-icon"><i class="fa fa-facebook" aria-hidden="true"></i></span>
+                        <span class="login-icon" ng-click="fbLogin()"><i class="fa fa-facebook" aria-hidden="true"></i></span>
                         <span class="login-icon-class"><i class="fa fa-twitter" aria-hidden="true"></i></span>
                         <span class="login-icon-class"><i class="fa fa-google" aria-hidden="true"></i></span>
                         <span class="login-icon-class"><i class="fa fa-yahoo" aria-hidden="true"></i></span>

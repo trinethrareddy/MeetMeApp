@@ -21,7 +21,7 @@ angular
     ])
     .config(function($stateProvider, $locationProvider, $urlRouterProvider) {
         $locationProvider.hashPrefix('');
-       
+
         $urlRouterProvider.otherwise("/home");
         // 
         // Now set up the states 
@@ -57,3 +57,4 @@ angular
         })
 
     });
+
