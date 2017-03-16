@@ -17,12 +17,34 @@ angular
         'ui.router',
         'ngMaterial',
         'meetMeApp.login',
-        'meetMeApp.signup'
+        'meetMeApp.signup',
+        'meetMeApp.home'
     ])
+
+    .run(['$rootScope','AuthenticateService','$state',function($rootScope,AuthenticateService,$state){
+
+         var AuthDetails = AuthenticateService.authenticateSetDetails();
+         console.log(AuthDetails);
+
+        $rootScope.$on('$stateChangeStart', 
+function(event, toState, toParams, fromState, fromParams){ 
+    for(var i=0;i<AuthDetails.length;i++){
+         if(toState.permission == AuthDetails[i]){
+            $state.go("homepage");
+            event.preventDefault();
+         }
+         else {
+             $state.go("/fisrtpage");
+         }
+    }
+   
+});
+
+    }])
     .config(function($stateProvider, $locationProvider, $urlRouterProvider) {
         $locationProvider.hashPrefix('');
        
-        $urlRouterProvider.otherwise("/home");
+        $urlRouterProvider.otherwise("/fisrtpage");
         // 
         // Now set up the states 
         $stateProvider
@@ -54,15 +76,16 @@ angular
         .state('signup', {
             url: "/SignUp",
             templateUrl: "./modules/signup/signup.html"
-        })
+        });
 
+      
     });
 
 
 //Google Login
 
 function onLoadFunction(){
-    gapi.client.setApiKey('AIzaSyDeXfVywR8aZjQOKNl7mi05CJfdtR5a8E8');
+     gapi.client.setApiKey('AIzaSyDeXfVywR8aZjQOKNl7mi05CJfdtR5a8E8');
     gapi.client.load('plus','v1',function(){});
 }
 

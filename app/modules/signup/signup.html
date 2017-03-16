@@ -1,63 +1,69 @@
-<md-card>
-    <div layout='row' class="signup-div">
-        <div class="signup-image-div" hide-xs hide-sm flex-lg="40" flex-gt-sm='40' flex-sm="30" flex-xs="40">
+<div layout='row'>
+  <div flex-offset-lg='30' flex-lg='50' flex-offset-md='30' flex-md='50' flex-offset-sm='10' flex-sm='50' flex-offset-xs='10'
+    flex-xs='50'>
+    <md-card ng-controller='signupCtrl'>
+      <div layout='row' class="signup-div">
+        <!--<div class="signup-image-div" hide-xs hide-sm flex-lg="40" flex-gt-sm='40' flex-sm="30" flex-xs="40">
             <img class="signup-image-class" src="./images/14.jpg">
+        </div>-->
+        <!--<div flex-lg="20" flex-md="20" flex-gt-sm="20">
+        </div>-->
+        <div flex-offset-lg='10' flex-lg="60" flex-offset-md='10' flex-md="60" flex-offset-sm='10' flex-sm="60" flex-offset-xs='10'
+          flex-xs="40">
+          <md-card-content>
+            <div layout="row">
+              <md-input-container flex-lg="60" flex-md="60" flex-sm="60" flex-xs="60">
+                <input type="text" ng-model="firstname" placeholder="FIRST NAME">
+              </md-input-container>
+              <md-input-container flex-lg="60" flex-md="60" flex-sm="60" flex-xs="60">
+                <input type="text" ng-model="lastname" placeholder="LAST NAME">
+              </md-input-container>
+            </div>
+            <br>
+            <div layout="column">
+              <md-input-container>
+                <input type="text" ng-model="email" placeholder="EMAIL">
+              </md-input-container>
+            </div>
+            <br>
+            <div layout="row">
+              <md-input-container flex-lg="60" flex-md="60" flex-sm="60" flex-xs="60">
+                <input type="text" ng-model="password" placeholder="PASSWORD" value="2">
+              </md-input-container>
+              <md-input-container flex-lg="60" flex-md="60" flex-sm="60" flex-xs="60">
+                <input type="text" ng-model="repassword" placeholder="RE-PASSWORD" value="3">
+              </md-input-container>
+            </div>
+            <br>
+            <md-radio-group layout="row" flex-offset-md="10" flex-gt-sm="30" flex-offset-sm="5">
+              <md-radio-button ng-model="male" value="male">
+                Male
+              </md-radio-button>
+              <md-radio-button ng-model="female" value="female">
+                Female
+              </md-radio-button>
+              <!--<md-radio-button ng-model="other" value="other">
+                Other
+              </md-radio-button>-->
+            </md-radio-group>
+            <br>
+            <div class="signup-button-div">
+              <md-button class="signup-button md-raised md-primary"> SIGNUP </md-button>
+            </div>
+          </md-card-content>
+          <md-card-footer>
+            <div layout="column" class="signup-footer-div">
+              <h4><b>SIGN UP WITH</b></h4>
+              <div layout='row' class="signup-icon-div">
+                <span flex-md="35" flex-sm="35" flex-xs="35" flex-lg="35"><md-button ng-click='onFBLogin()'><i class="fa fa-facebook signup-icon" aria-hidden="true"></i></md-button></span>
+                <span flex-md="35" flex-sm="35" flex-xs="35" flex-lg="35"><md-button><i class="fa fa-twitter signup-icon" aria-hidden="true"></i></md-button></span>
+                <span flex-md="35" flex-sm="35" flex-xs="35" flex-lg="35"><md-button ng-click='onGoogleLogin()'><i class="fa fa-google signup-icon" aria-hidden="true"></i></md-button></span>
+                <span flex-md="35" flex-sm="35" flex-xs="35" flex-lg="35"><md-button><i class="fa fa-yahoo signup-icon" aria-hidden="true"></i></md-button></span>
+              </div>
+            </div>
+          </md-card-footer>
         </div>
-        <div flex-lg="20" flex-md="20" flex-gt-sm="20">
-        </div>
-        <div flex-lg="40" flex-md="40" flex-sm="40" flex-xs="40">
-            <md-card-content>
-                <div layout="row">
-                    <md-input-container flex-lg="60" flex-md="60" flex-sm="60" flex-xs="60">
-                        <input type="text" ng-model="firstname" placeholder="FIRST NAME">
-                    </md-input-container>
-                    <md-input-container flex-lg="60" flex-md="60" flex-sm="60" flex-xs="60">
-                        <input type="text" ng-model="lastname" placeholder="LAST NAME">
-                    </md-input-container>
-                </div>
-                <br>
-                <div layout="column">
-                    <md-input-container>
-                        <input type="text" ng-model="email" placeholder="EMAIL">
-                    </md-input-container>
-                </div>
-                <br>
-                <div layout="row">
-                    <md-input-container flex-lg="60" flex-md="60" flex-sm="60" flex-xs="60">
-                        <input type="text" ng-model="password" placeholder="PASSWORD" value="2">
-                    </md-input-container>
-                    <md-input-container flex-lg="60" flex-md="60" flex-sm="60" flex-xs="60">
-                        <input type="text" ng-model="repassword" placeholder="RE-PASSWORD" value="3">
-                    </md-input-container>
-                </div>
-                <br>
-                <md-radio-group layout="row" flex-offset-md="10" flex-gt-sm="30" flex-offset-sm="5">
-                    <md-radio-button ng-model="male" value="male">
-                        Male
-                    </md-radio-button>
-                    <md-radio-button ng-model="female" value="female">
-                        Female
-                    </md-radio-button>
-                    <md-radio-button ng-model="other" vlaue="other">
-                        Other
-                    </md-radio-button>
-                </md-radio-group>
-                <br>
-                <div class="signup-button-div">
-                    <md-button class="signup-button md-raised md-primary"> SIGNUP </md-button>
-                </div>
-            </md-card-content>
-            <md-card-footer>
-                <div layout="column" class="signup-footer-div">
-                    <h4><b>SIGN UP WITH</b></h4>
-                    <div layout="row" class="signup-icon-div">
-                        <span flex-md="5" class="signup-icon"><i class="fa fa-facebook" aria-hidden="true"></i></span>
-                        <span flex-md="5" class="signup-icon-class"><i class="fa fa-twitter" aria-hidden="true"></i></span>
-                        <span flex-md="5" class="signup-icon-class"><i class="fa fa-google" aria-hidden="true"></i></span>
-                        <span flex-md="5" class="signup-icon-class"><i class="fa fa-yahoo" aria-hidden="true"></i></span>
-                    </div>
-                </div>
-            </md-card-footer>
-        </div>
-    </div>
-</md-card>
+      </div>
+    </md-card>
+  </div>
+</div>
