@@ -5,34 +5,26 @@
 			height: 450px;
 			margin-right: 40px;
 			}
-		.login-button{
-			width: 250px;
-			margin-left: 150px;
-		}
+		.login-button-div{
+			.login-button{
+				width: 250px;
+				margin-left: 150px;
+			}
+			.forgot-button{
+				width: 250px;
+			}
+		}	
 	}
-	.forgot-button{
-		width: 250px;
-	}
+	
 	.login-footer-div{
-		text-align: center;
 		.login-icon-div{
 			margin-top: 20px;
 			.login-icon{
-				margin-left: 10px;
 				color: #5f90db;
-				font-size: 25px;
-			}
-			.login-icon-class{
-				margin-left: 20px;
-				color: #5f90db;
-				font-size: 25px;
+				font-size: 30px;
 			}
 		}
 	}
 	
-}
-
-.login-button-div{
-	text-align: center;
 }
 

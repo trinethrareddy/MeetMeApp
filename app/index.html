@@ -23,22 +23,89 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     <!-- Add your site or application content here -->
-    <div ng-include="'views/header.html'"></div>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid navbar-class">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand font-color" ui-sref="#">MeetMe</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar" style="margin-left: 150px;">
+                <ul class="nav navbar-nav">
+                    <li><a class="font-color" ui-sref="features">Features</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle font-color" data-toggle="dropdown" ui-sref="download">Download</a>
+                        <!-- <ul class="dropdown-menu"><span class="caret"></span>
+                            <li><a href="#">Page 1-1</a></li>
+                            <li><a href="#">Page 1-2</a></li>
+                            <li><a href="#">Page 1-3</a></li>
+                        </ul> -->
+                    </li>
+                    <li><a class="font-color" ui-sref="security">Security</a></li>
+                    <li><a class="font-color" ui-sref="faq">FAQ</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a class="font-color" ui-sref="signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li><a class="font-color" ui-sref="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <div class="container-fluid viewpage">
         <div ui-view></div>
     </div>
-    <div ng-include="'views/footerView.html'"></div>
+    <div class="container-fluid footer-div">
+        <div class="footer-innerdiv">
+            <div class="col-md-3 col-sm-3 col-xs-3">
+                <div>
+                    <p>Features</p>
+                    <p>Download</p>
+                    <p>Security</p>
+                    <p>FAQ</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-3">
+                <div>
+                    <p>About</p>
+                    <p>Career</p>
+                    <p>Brand Centre</p>
+                    <p>Get in Touch</p>
+                    <p>Blog</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-3">
+                <div>
+                    <p>Mac/Pc</p>
+                    <p>Andorid</p>
+                    <p>iphone</p>
+                    <p>Windows Phone</p>
+                    <p>Black berry</p>
+                    <p>Nokia</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-3">
+                <div>
+                    <p>FAQ</p>
+                    <p>Twitter</p>
+                    <p>Facebook</p>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>
-        ! function (A, n, g, u, l, a, r) {
-            A.GoogleAnalyticsObject = l, A[l] = A[l] || function () {
+    ! function(A, n, g, u, l, a, r) {
+        A.GoogleAnalyticsObject = l, A[l] = A[l] || function() {
                 (A[l].q = A[l].q || []).push(arguments)
             }, A[l].l = +new Date, a = n.createElement(g),
-                r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
-        }(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+            r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
+    }(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-        ga('create', 'UA-XXXXX-X');
-        ga('send', 'pageview');
+    ga('create', 'UA-XXXXX-X');
+    ga('send', 'pageview');
     </script>
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
@@ -57,13 +124,30 @@
     <!-- endbuild -->
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
+    <!-- <script src="scripts/apis.js"></script> -->
+    <script src="modules/shared/localFactory.js"></script>
+    <script src="modules/shared/AuthenticateService.js"></script>
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/about.js"></script>
     <script src="modules/login/loginModule.js"></script>
     <script src="modules/login/loginController.js"></script>
     <script src="modules/signup/signupModule.js"></script>
     <script src="modules/signup/signupController.js"></script>
+    <script src="modules/homeModule/homeModule.js"></script>
+    <script src="modules/homeModule/homeController.js"></script>
     <!-- endbuild -->
+
+    <script type="text/javascript">
+        (function() {
+        var p = document.createElement('script');
+        p.type = 'text/javascript';
+        p.async = true;
+        p.src = "https://apis.google.com/js/client.js?onload=onLoadFunction";
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(p, s);
+
+    })();
+    </script>
 </body>
 
 </html>
