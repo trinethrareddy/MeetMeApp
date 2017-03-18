@@ -1,20 +1,24 @@
-(function() {
+(function () {
     'use strict';
     angular
         .module('meetMeApp.login')
-        .controller('loginCtrl', ['$scope', function($scope) {
+        .controller('loginCtrl', ['$scope','$auth', function ($scope,$auth) {
             $scope.name = "namratha";
             console.log("123");
-            $scope.fbLogin = function() {
-            	console.log("fbLogin");
-                FB.login(function(response) {
+            $scope.authenticate = function (provider) {
+                $auth.authenticate(provider);
+            };
+
+            $scope.fbLogin = function () {
+                console.log("fbLogin");
+                FB.login(function (response) {
                     if (response.authResponse) {
-                    	console.log(response.authResponse.userID)
+                        console.log(response.authResponse.userID)
                         console.log('Welcome!  Fetching your information.... ');
-                        FB.api('/me',function(response) {
-                        	console.log(response);
+                        FB.api('/me', function (response) {
+                            console.log(response);
                             console.log('Good to see you, ' + response.name + '.');
-                            var accessToken= FB.getAuthResponse();
+                            var accessToken = FB.getAuthResponse();
                             console.log(accessToken);
                         });
                     } else {
