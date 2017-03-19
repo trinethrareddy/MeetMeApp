@@ -91,6 +91,11 @@ body {
     border-bottom: 0;
   }
 }
+
+.meetme-viewpage{
+  min-height: 70%;
+}
+
   .navbar-default{
     color: white;
     .navbar-class{
@@ -100,7 +105,7 @@ body {
   }
   .footer-div{
     background-color: #332447;
-    height:250px;
+    min-height:250px;
     color: white;
     margin-top: 70px;
   }

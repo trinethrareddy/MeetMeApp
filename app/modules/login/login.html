@@ -1,52 +1,53 @@
-<div layout='row'>
+<div layout='row' class="login-view">
   <div flex-offset-lg='30' flex-lg='50' flex-offset-md='30' flex-md='50' flex-offset-sm='10' flex-sm='50' flex-offset-xs='10'
     flex-xs='50'>
     <md-card ng-controller='loginCtrl'>
       <div layout='row' class="login-div">
-        <!--<div class="login-image-div" flex-lg="40" flex-md='40' flex-sm="40" flex-xs="40">
-            <img class="login-image-class" src="./images/14.jpg">
-        </div>-->
-        <!--<div flex-lg="20" flex-md="10" flex-sm="10" flex-xs="10">
-        </div>-->
-        <div flex-offset-lg='30' flex-lg="60" flex-offset-md='30' flex-md="60" flex-offset-sm='30' flex-sm="60" flex-offset-xs='30'
+        <div flex-offset-lg='30' flex-lg="60" flex-offset-md='20' flex-md="60" flex-offset-sm='30' flex-sm="60" flex-offset-xs='30'
           flex-xs="60">
           <md-card-content>
-            <div layout="column">
-              <md-input-container>
-                <input type="text" ng-model="username" placeholder="USERNAME">
-              </md-input-container>
-            </div>
-            <br>
-            <div layout="column">
-              <md-input-container>
-                <input type="text" ng-model="password" placeholder="PASSWORD">
-              </md-input-container>
-            </div>
-            <br>
-            <div layout="row">
-              <md-checkbox ng-model="isChecked" flex-lg="30" flex-md="30" flex-sm="30" flex-xs="30">
-                Remeber login
-              </md-checkbox>
-            </div>
-            <br>
-            <br>
-            <div class="login-button-div">
-              <div layout='row'>
-                <md-button flex-offset-md="20" flex-md="30" flex-offset-lg="20" flex-lg="30" flex-offset-sm="20" flex-sm="30" flex-offset-xs="20"
-                  flex-xs="30" class="login-button md-raised md-primary"> LOGIN </md-button>
+              <form name="loginForm" novalidate ng-submit="loginForm.$valid &&  fnLogin(user)">
+              <div layout="column">
+                <md-input-container>
+                  <input type="text" name="userName" ng-model="user.username" placeholder="USERNAME" required>
+                  <div ng-messages="loginForm.userName.$error">
+                    <div ng-message="required">This is required!</div>
+                  </div>
+                </md-input-container>
+              </div>
+              <br>
+              <div layout="column">
+                <md-input-container>
+                  <input type="password" name="password" ng-model="user.password" placeholder="PASSWORD" required>
+                  <div ng-messages="loginForm.password.$error">
+                    <div ng-message="required">This is required!</div>
+                  </div>
+                </md-input-container>
+              </div>
+              <br>
+              <div layout="column">
+                <md-checkbox ng-model="user.isRemeber" flex-lg="30" flex-md="30" flex-sm="100" flex-xs="100">
+                  Remeber login
+                </md-checkbox>
+                <a href="" flex-lg="30" flex-md="30" flex-sm="100" flex-xs="100">Forgot Password?  </a>
               </div>
               <br>
               <br>
-              <div layout='row'>
-                <div flex-offset-md="5" flex-md="50" flex-offset-lg="5" flex-lg="50" flex-offset-sm="5" flex-sm="50" flex-offset-xs="5" flex-xs="50">
-                  <md-button class="forgot-button md-raised"> Forgot Button? </md-button>
+              <div class="login-button-div">
+                <div layout='row'>
+                  <md-button type="submit" flex-offset-md="20" flex-md="50" flex-offset-lg="30" flex-lg="50" flex-offset-sm="20" flex-sm="60"
+                    flex-offset-xs="20" flex-xs="60" class="login-button md-raised md-primary" ng-disabled="loginForm.$invalid">
+                    LOGIN </md-button>
                 </div>
               </div>
-            </div>
+            </form>
+            <div class="text-center" ng-if="isWorngPsw" style="color:red"> User name or Password wrong</div>
+            <div class="text-center" ng-if="noUsersData" style="color:red"> {{errorText}}</div>
           </md-card-content>
           <md-card-footer>
             <div layout="column" class="login-footer-div">
-              <h4><b>LOG IN WITH</b></h4>
+              <h4 flex-offset-md="30" flex-md="50" flex-offset-lg="30" flex-lg="50" flex-offset-sm="20" flex-sm="60" flex-offset-xs="20"
+                flex-xs="60"><b>LOG IN WITH</b></h4>
               <div layout='row' class="login-icon-div">
                 <span flex-md="35" flex-sm="35" flex-xs="35" flex-lg="35"><i class="fa fa-facebook login-icon" ng-click='onFBLogin()' aria-hidden="true"></i></span>
                 <span flex-md="35" flex-sm="35" flex-xs="35" flex-lg="35"><i class="fa fa-twitter login-icon" aria-hidden="true"></i></span>
@@ -55,12 +56,6 @@
               </div>
             </div>
           </md-card-footer>
-          <!--<p>{{gmail.username}}</p>
-        <p>{{gmail.email}}</p>-->
-          <!--<img ng-src="{{g_image}}" style="height: 100px;width:100px;">-->
-
-          <!-- <p>{{facebook.username}}</p>
-            <p>{{facebbok.email}}</p> -->
         </div>
       </div>
     </md-card>

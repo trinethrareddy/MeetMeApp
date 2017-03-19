@@ -16,35 +16,36 @@ angular
         'ngSanitize',
         'ui.router',
         'ngMaterial',
+        'ngMessages',
         'meetMeApp.login',
         'meetMeApp.signup',
         'meetMeApp.home'
     ])
 
-    .run(['$rootScope','AuthenticateService','$state',function($rootScope,AuthenticateService,$state){
+    .run(['$rootScope', 'AuthenticateService', '$state', function ($rootScope, AuthenticateService, $state) {
 
-         var AuthDetails = AuthenticateService.authenticateSetDetails();
-         console.log(AuthDetails);
+        // var AuthDetails = AuthenticateService.authenticateSetDetails();
+        // console.log(AuthDetails);
 
-        $rootScope.$on('$stateChangeStart', 
-function(event, toState, toParams, fromState, fromParams){ 
-    for(var i=0;i<AuthDetails.length;i++){
-         if(toState.permission == AuthDetails[i]){
-            $state.go("homepage");
-            event.preventDefault();
-         }
-         else {
-             $state.go("/fisrtpage");
-         }
-    }
-   
-});
+        $rootScope.$on('$stateChangeStart',
+            function (event, toState, toParams, fromState, fromParams) {
+                // for (var i = 0; i < AuthDetails.length; i++) {
+                //     if (toState.permission == AuthDetails[i]) {
+                //         $state.go("homepage");
+                //         event.preventDefault();
+                //     }
+                //     else {
+                //         $state.go("/fisrtpage");
+                //     }
+                // }
+
+            });
 
     }])
-    .config(function($stateProvider, $locationProvider, $urlRouterProvider) {
+    .config(function ($stateProvider, $locationProvider, $urlRouterProvider) {
         $locationProvider.hashPrefix('');
-       
-        $urlRouterProvider.otherwise("/fisrtpage");
+
+        $urlRouterProvider.otherwise("/Login");
         // 
         // Now set up the states 
         $stateProvider
@@ -53,40 +54,40 @@ function(event, toState, toParams, fromState, fromParams){
                 templateUrl: "views/features.html"
             })
 
-        .state('download', {
-            url: "/Download",
-            templateUrl: "views/download.html"
-        })
+            .state('download', {
+                url: "/Download",
+                templateUrl: "views/download.html"
+            })
 
-        .state('security', {
-            url: "/Security",
-            templateUrl: "views/security.html"
-        })
+            .state('security', {
+                url: "/Security",
+                templateUrl: "views/security.html"
+            })
 
-        .state('faq', {
-            url: "/FAQ",
-            templateUrl: "views/faq.html"
-        })
+            .state('faq', {
+                url: "/FAQ",
+                templateUrl: "views/faq.html"
+            })
 
-        .state('login', {
-            url: "/Login",
-            templateUrl: "./modules/login/login.html"
-        })
+            .state('login', {
+                url: "/Login",
+                templateUrl: "./modules/login/login.html"
+            })
 
-        .state('signup', {
-            url: "/SignUp",
-            templateUrl: "./modules/signup/signup.html"
-        });
+            .state('signup', {
+                url: "/SignUp",
+                templateUrl: "./modules/signup/signup.html"
+            });
 
-      
+
     });
 
 
 //Google Login
 
-function onLoadFunction(){
-     gapi.client.setApiKey('AIzaSyDeXfVywR8aZjQOKNl7mi05CJfdtR5a8E8');
-    gapi.client.load('plus','v1',function(){});
+function onLoadFunction() {
+    gapi.client.setApiKey('AIzaSyDeXfVywR8aZjQOKNl7mi05CJfdtR5a8E8');
+    gapi.client.load('plus', 'v1', function () { });
 }
 
 // //Facebook Login
@@ -110,10 +111,10 @@ function onLoadFunction(){
 //              });
 //             };
 
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
+(function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) { return; }
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));

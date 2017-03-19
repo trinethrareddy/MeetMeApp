@@ -2,13 +2,21 @@
 	'use strict';
 	angular
 	.module('meetMeApp.signup')
-	.controller('signupCtrl',['$scope',function($scope){
-		$scope.name ="namratha";
-		console.log("123");
-
+	.controller('signupCtrl',['$scope','$rootScope','$cookies','$state',function($scope,$rootScope,$cookies,$state){
 		$scope.gmail = {
 			username : "",
 			email : ""
+		};
+		var signedUser ={
+			"usersList":[]
+		};		
+		if($cookies.getObject('SignUpUsers')){
+			signedUser = $cookies.getObject('SignUpUsers');			
+		}
+		$scope.fnSignUp = function(newUser){
+			signedUser.usersList.push(newUser);
+			$cookies.putObject('SignUpUsers',signedUser);
+			$state.go('login');
 		};
 		$scope.onGoogleLogin = function(){
 			console.log("abc");

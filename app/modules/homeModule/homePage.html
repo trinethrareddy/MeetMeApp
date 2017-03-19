@@ -1,5 +1,12 @@
-<div>
-
-
-    <h1>NAmratha</h1>
+<div class="container">
+  <h2>Hello <span class="text-capitalize text-primary"> {{loggedInUser.name}}</span> Welcome to MeetMe</h2>
+  <div class="col-md-10 col-md-offset-1">
+    <div class="col-md-4">
+        <img ng-src="{{loggedInUser.img_url}}" class="img-circle" alt="Cinque Terre" width="172" height="172"> 
+    </div>
+    <div class="col-md-8">
+        <h3 class="text-capitalize">Name : {{loggedInUser.name}}</h3>
+        <h3>Email: {{loggedInUser.email}}</h3>
+    </div>
+  </div>
 </div>
