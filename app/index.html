@@ -23,11 +23,11 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     <!-- Add your site or application content here -->
-    <div ng-include="'views/header.html'"></div>
+   <!--  <div ng-include="'views/header.html'"></div> -->
     <div class="container-fluid viewpage">
         <div ui-view></div>
     </div>
-    <div ng-include="'views/footerView.html'"></div>
+    <!-- <div ng-include="'views/footerView.html'"></div> -->
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>
         ! function (A, n, g, u, l, a, r) {
@@ -59,8 +59,11 @@
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/about.js"></script>
+    <script src="scripts/lib/modernizr.custom.86080.js"></script>
     <script src="modules/login/loginModule.js"></script>
+
     <script src="modules/login/loginController.js"></script>
+  
     <script src="modules/signup/signupModule.js"></script>
     <script src="modules/signup/signupController.js"></script>
     <!-- endbuild -->

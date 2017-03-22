@@ -22,7 +22,7 @@ angular
     .config(function($stateProvider, $locationProvider, $urlRouterProvider) {
         $locationProvider.hashPrefix('');
 
-        $urlRouterProvider.otherwise("/home");
+        $urlRouterProvider.otherwise("/Login");
         // 
         // Now set up the states 
         $stateProvider

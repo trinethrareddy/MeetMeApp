@@ -5,6 +5,7 @@
         .controller('loginCtrl', ['$scope', function($scope) {
             $scope.name = "namratha";
             console.log("123");
+          
             $scope.fbLogin = function() {
             	console.log("fbLogin");
                 FB.login(function(response) {

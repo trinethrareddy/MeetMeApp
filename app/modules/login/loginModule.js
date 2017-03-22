@@ -1,7 +1,7 @@
 (function() {
     'use strict';
     angular
-        .module('meetMeApp.login', []);
+        .module('meetMeApp.login', ['ngAnimate']);
    window.fbAsyncInit = function() {
     FB.init({
       appId      : '566081316934628',
