@@ -2,10 +2,12 @@
     'use strict';
     angular
         .module('meetMeApp.login')
-        .controller('loginCtrl', ['$scope', function($scope) {
+        .controller('loginCtrl', ['$scope','$state', function($scope,$state) {
             $scope.name = "namratha";
             console.log("123");
-          
+          $scope.fnLogin=function(){
+            $state.go('home');
+          }
             $scope.fbLogin = function() {
             	console.log("fbLogin");
                 FB.login(function(response) {

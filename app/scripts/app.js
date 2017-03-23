@@ -26,22 +26,26 @@ angular
         // 
         // Now set up the states 
         $stateProvider
-            .state('features', {
+            .state('home', {
+                url: "/Home",
+                templateUrl: "views/home.html"
+            })
+            .state('home.features', {
                 url: "/Features",
                 templateUrl: "views/features.html"
             })
 
-        .state('download', {
+        .state('home.download', {
             url: "/Download",
             templateUrl: "views/download.html"
         })
 
-        .state('security', {
+        .state('home.security', {
             url: "/Security",
             templateUrl: "views/security.html"
         })
 
-        .state('faq', {
+        .state('home.faq', {
             url: "/FAQ",
             templateUrl: "views/faq.html"
         })
@@ -57,4 +61,3 @@ angular
         })
 
     });
-
