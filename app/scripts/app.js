@@ -16,7 +16,6 @@ angular
         'ngSanitize',
         'ui.router',
         'ngMaterial',
-        'meetMeApp.login',
         'meetMeApp.signup'
     ])
     .config(function($stateProvider, $locationProvider, $urlRouterProvider) {
@@ -52,7 +51,8 @@ angular
 
         .state('login', {
             url: "/Login",
-            templateUrl: "./modules/login/login.html"
+            templateUrl: "./modules/login/login.html",
+            controller:"loginCtrl"
         })
 
         .state('signup', {

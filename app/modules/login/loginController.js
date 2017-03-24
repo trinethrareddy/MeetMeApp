@@ -1,10 +1,10 @@
 (function() {
     'use strict';
     angular
-        .module('meetMeApp.login')
-        .controller('loginCtrl', ['$scope','$state', function($scope,$state) {
+        .module('meetMeApp')
+        .controller('loginCtrl', ['$scope','$state','urlConstant', function($scope,$state,urlConstant) {
             $scope.name = "namratha";
-            console.log("123");
+            console.log("urlConstant:::",urlConstant);
           $scope.fnLogin=function(){
             $state.go('home');
           }
