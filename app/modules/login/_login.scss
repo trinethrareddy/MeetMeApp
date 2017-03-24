@@ -1,11 +1,33 @@
-md-content {
+.login-form{
+	md-content {
     width: 400px;
     box-shadow: 0px 0px 17px 7px #888888;
     border-radius: 3px;
+    background: rgba(255, 255, 255, 0.83);
 }
-.links{
-	color:#619cce;
 }
+.login-footer-div {
+    z-index: 3000;
+    background-color: white;
+}
+
+.footer-login {
+    background-color: #3f51b5;
+    height: 70px;
+    z-index: 1;
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+}
+
+.social-icon-section {
+    padding-top: 4%;
+}
+
+.links {
+    color: #619cce;
+}
+
 .login-style {
     z-index: 2000;
 }

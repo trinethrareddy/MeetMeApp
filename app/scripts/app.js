@@ -46,16 +46,19 @@ angular
         })
 
         .state('home.faq', {
-            url: "/FAQ",
-            templateUrl: "views/faq.html"
-        })
+                url: "/FAQ",
+                templateUrl: "views/faq.html"
+            })
+            .state('app', {
+                url: "/app",
+                templateUrl: "views/mainTemplate.html"
+            })
+            .state('app.login', {
+                url: "/Login",
+                templateUrl: "./modules/login/login.html"
+            })
 
-        .state('login', {
-            url: "/Login",
-            templateUrl: "./modules/login/login.html"
-        })
-
-        .state('signup', {
+        .state('app.signup', {
             url: "/SignUp",
             templateUrl: "./modules/signup/signup.html"
         })
