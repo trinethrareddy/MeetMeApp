@@ -33,12 +33,12 @@ angular
             })
             .state('home.features', {
                 url: "/Features",
-                templateUrl: "views/features.html",
-                controller: "profileController"
+                templateUrl: "views/features.html"
             })
             .state('home.profile', {
                 url: "/profile",
-                templateUrl: "modules/profile/profileView.html"
+                templateUrl: "modules/profile/profileView.html",
+                controller: "profileController"
             })
 
         .state('home.download', {

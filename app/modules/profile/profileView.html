@@ -1,5 +1,94 @@
 <div class="col-xs-12 col-sm-12 col-md-12" style="text-align: center">
-    <div>
-      <img src="../../images/cover1.jpg" height="350" width="800">
+  <div class="cover-photo-div">
+    <img src="../../images/cover1.jpg" height="350" width="800">
+    <div class="profie-pic-sec">
+      <img ng-src="{{activeUser.img_url}}" height="150" width="150">
+      <h1>{{activeUser.userName}}
+      </h1>
+      <div class="profile-tabs-section">
+        <md-content>
+          <md-tabs md-dynamic-height md-border-bottom>
+            <md-tab label="Timelines">
+              <md-content class="md-padding">
+                <p>Time lines here</p>
+              </md-content>
+            </md-tab>
+            <md-tab label="About" ng-click="fnGetLocation()">
+              <md-content class="md-padding custm-tab-content">
+                <form name="aboutUserForm" novalidate ng-submit="aboutUserForm.$valid &&  fnUpdateUserDetails(user)">
+                  <div layout-gt-sm="row">
+                    <md-input-container class="md-block" flex-gt-sm>
+                      <label>First Name</label>
+                      <input type="text" required name="firstName" ng-model="activeUser.firstName" />
+                      <div ng-messages="aboutUserForm.firstName.$error">
+                        <div ng-message="required">This is required!</div>
+                      </div>
+                    </md-input-container>
+                    <div flex="5" hide-xs hide-sm>
+                      <!-- Spacer //-->
+                    </div>
+                    <md-input-container class="md-block" flex-gt-sm>
+                      <label>Last Name</label>
+                      <input type="text" name="lastName" ng-model="activeUser.lastName" required/>
+                      <div ng-messages="aboutUserForm.lastName.$error">
+                        <div ng-message="required">This is required!</div>
+                      </div>
+                    </md-input-container>
+                  </div>
+                  <div layout-gt-sm="row">
+                    <md-input-container class="md-block" flex-gt-sm>
+                      <label>Email</label>
+                      <input name="email" ng-model="activeUser.email" required ng-pattern="/^.+@.+\..+$/" required/>
+                      <div ng-messages="aboutUserForm.email.$error">
+                        <div ng-message="required">This is required!</div>
+                      </div>
+                    </md-input-container>
+                  </div>
+                  <md-input-container class="md-icon-float md-block" flex-gt-sm="">
+                    <label>Mobile Number</label>
+                    <input ng-model="activeUser.mobileNumber" type="number" name="mobileNumber" required>
+                    <div ng-messages="aboutUserForm.mobileNumber.$error">
+                      <div ng-message="required">This is required!</div>
+                    </div>
+                  </md-input-container>
+                  <md-input-container class="md-icon-float md-block" flex-gt-sm="">
+                    <label>Age</label>
+                    <input ng-model="activeUser.age" type="text" name="age" required>
+                    <div ng-messages="aboutUserForm.age.$error">
+                      <div ng-message="required">This is required!</div>
+                    </div>
+                  </md-input-container>
+                  <md-input-container class="md-icon-float md-block" flex-gt-sm="">
+                    <label>Location</label>
+                    <input ng-model="activeUser.location" type="text" name="location" required>
+                    <div ng-messages="aboutUserForm.location.$error">
+                      <div ng-message="required">This is required!</div>
+                    </div>
+                  </md-input-container>
+                  <md-input-container>
+                    <label>Gender</label>
+                    <md-select ng-model="activeUser.gender">
+                      <md-option ng-repeat="gender in genderList" name="gender" ng-value="gender" required>
+                        {{gender}}
+                      </md-option>
+                    </md-select>
+                    <div ng-messages="aboutUserForm.gender.$error">
+                      <div ng-message="required">This is required!</div>
+                    </div>
+                  </md-input-container>
+                  <md-button class="md-raised md-primary" style="width:100%; margin: 0px 0px;" type="submit" ng-disabled="aboutUserForm.$invalid">Update Details</md-button>
+                </form>
+              </md-content>
+            </md-tab>
+            <md-tab label="Photos">
+              <md-content class="md-padding">
+                <p>Photos Here</p>
+              </md-content>
+            </md-tab>
+          </md-tabs>
+        </md-content>
+      </div>
     </div>
+  </div>
+  <!--<pre>{{loggedUser | json}}</pre>-->
 </div>

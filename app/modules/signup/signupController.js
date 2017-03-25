@@ -5,40 +5,6 @@
         .controller('signUpCtrl', ['$scope', '$state', 'urlConstant', 'urlService', 'logService', function ($scope, $state, urlConstant, urlService, logService) {
             console.log("urlConstant::", urlConstant);
             $scope.fnSignUpUser = function (newUser) {
-                var payload12 = {
-                    "active": true,
-                    "email": newUser.email,
-                    "firstName": newUser.firstName,
-                    "id": 0,
-                    "lastName": newUser.lastName,
-                    "locked": true,
-                    "password": newUser.password,
-                    "role": {
-                        "id": "string",
-                        "name": "string"
-                    },
-                    "token": "string",
-                    "userProfile": {
-                        "age": 0,
-                        "city": 0,
-                        "contactNumber": "string",
-                        "country": 0,
-                        "dateOfBirth": "2017-03-24T12:00:33.592Z",
-                        "firstVerificationBy": 0,
-                        "firstVerificationOn": "2017-03-24T12:00:33.592Z",
-                        "gender": newUser.gender,
-                        "geoLocation": "string",
-                        "id": 0,
-                        "professional": "string",
-                        "recentPicId": 0,
-                        "secondVerificationBy": 0,
-                        "secondVerificationOn": "2017-03-24T12:00:33.592Z",
-                        "thirdVerificationBy": 0,
-                        "thirdVerificationOn": "2017-03-24T12:00:33.592Z",
-                        "zipCode": "string"
-                    },
-                    "verified": true
-                }
                 var payload = {
                     "active": true,
                     "email": newUser.email,

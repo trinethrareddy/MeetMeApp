@@ -20,11 +20,9 @@
 				// $state.go('home');
 			}
 			$scope.onFBLogin = function () {
-				// $cookies.put('isLocalLogin', "no");
-				// $rootScope.isLocalLogin = false;
 				FB.login(function (response) {
 					if (response.authResponse) {
-						FB.api('/me', 'GET', { fields: 'email, first_name , name , id, picture' }, function (response) {
+						FB.api('/me', 'GET', { fields: 'email, first_name ,last_name, gender,name , id, picture' }, function (response) {
 							$scope.$apply(function () {
 								console.log(response);
 								if (response) {
@@ -44,10 +42,14 @@
 						return_scopes: true
 					});
 			}
-			$scope.gmail = {
+			var gmail = {
 				username: "",
-				email: ""
+				email: "",
+				img_url:"",
+				language:"",
+				gender:""
 			};
+
 
 			$scope.onGoogleLogin = function () {
 				// $cookies.put('isLocalLogin', "no");
@@ -63,10 +65,13 @@
 								}
 							);
 							request.execute(function (resp) {
+								console.log("google::",resp);
 								$scope.$apply(function () {
-									$scope.gmail.username = resp.displayName;
-									$scope.gmail.email = resp.emails[0].value;
-									$scope.g_image = resp.image.url;
+									gmail.username = resp.displayName;
+									gmail.email = resp.emails[0].value;
+									gmail.img_url = resp.image.url;
+									gmail.gender = resp.gender;
+									gmail.language = resp.language;
 									// dataFactory.updateInfo('Google', { username: $scope.gmail.username, email: $scope.gmail.email, image: $scope.g_image });
 									// $scope.googleDetails = dataFactory.getInfo('Google');
 									// console.log($scope.googleDetails);
@@ -75,11 +80,11 @@
 									// $scope.authenticateSetDetails = AuthenticateService.authenticateSetDetails();
 									// console.log($scope.authenticateSetDetails);
 									var loggedInUser = {};
-									loggedInUser = resp;
+									loggedInUser = gmail;
 									loggedInUser.from = 'google';
 									$cookies.putObject('loggedInUser', loggedInUser);
 									// $state.go('homepage');
-									if (($scope.gmail.username == resp.displayName) && ($scope.gmail.email == resp.emails[0].value) && ($scope.g_image == resp.image.url)) {
+									if ((gmail.username === resp.displayName) && (gmail.email === resp.emails[0].value) && (gmail.img_url === resp.image.url)) {
 										// $state.go('homepage');
 										logService.setoreLoggedUser(loggedInUser);
 										console.log("loggedInUser:::", loggedInUser);

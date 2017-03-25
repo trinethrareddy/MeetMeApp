@@ -3,6 +3,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
 @import "../modules/login/_login.scss";
+@import "../modules/profile/_profile.scss";
 @import "../modules/signup/_signup.scss";
 
 .browsehappy {
@@ -12,7 +13,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
   padding: 0.2em 0;
 }
 
-body {
+body { 
   padding: 0;
 }
 
@@ -97,21 +98,26 @@ body {
     color: white;
     border: none;
     .navbar-class{
-      background-color: rgb(63,81,181);
+      background-color: rgb(63,81,181); 
       color: #fff;
-    }
-  }
-  .footer-div{
-    background-color: rgb(63,81,181);
+    } 
+  } 
+  .footer-div{ 
+    background-color: rgb(63,81,181); 
     height:250px;
-    color: #fff;
+    color: #fff;  
     margin-top: 70px;
-  }
+  } 
 
-  .footer-innerdiv{
+  .footer-innerdiv{ 
     margin-top: 50px;
-  }
-
+  } 
+  
   .font-color{
     color: white !important;
+  }
+  .profile-view { 
+    .cover-photo-div{
+      background-image: url(./images/cover1.jpg)
+    }
   }

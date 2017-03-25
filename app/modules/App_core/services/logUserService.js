@@ -9,6 +9,7 @@
             var loggedUserDetails;
             function _setoreLoggedUser(userDetails) {
                 loggedUserDetails = userDetails;
+                console.log("loggedUserDetails::",loggedUserDetails);
             };
             /* Get Child Details Api function end here*/
 

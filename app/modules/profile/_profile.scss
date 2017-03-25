@@ -1,0 +1,31 @@
+.cover-photo-div{
+    // height:350px;
+    // width:800px;
+    // border:1px solid red;
+    .profie-pic-sec{
+        text-align: left;
+        position: relative;
+        top: -107px;
+        left: 228px;
+        img{
+            border: 3px solid;
+        }
+        h1{
+            color: rgb(245,0,87);
+            display: inline;
+            font-size: 30px;
+            margin-left: 32px; 
+        }
+        .profile-tabs-section{
+            border: 1px solid #ccc;
+            height: 50px;
+            width: 636px;
+            margin-left: 151px;
+            position: relative;
+            top: -43px;
+        }
+        .custm-tab-content{
+            border-color: rgb(238,238,238);
+        }
+    }
+}
