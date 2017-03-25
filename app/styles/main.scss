@@ -95,15 +95,16 @@ body {
 /* manin view container css goes here */
   .navbar-default{
     color: white;
+    border: none;
     .navbar-class{
-      background-color: #332447;
-      color: white;
+      background-color: rgb(63,81,181);
+      color: #fff;
     }
   }
   .footer-div{
-    background-color: #332447;
+    background-color: rgb(63,81,181);
     height:250px;
-    color: white;
+    color: #fff;
     margin-top: 70px;
   }
 

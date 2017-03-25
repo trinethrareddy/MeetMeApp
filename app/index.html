@@ -24,7 +24,7 @@
     <![endif]-->
     <!-- Add your site or application content here -->
    <!--  <div ng-include="'views/header.html'"></div> -->
-    <div class="container-fluid viewpage">
+    <div class="viewpage">
         <div ui-view></div>
     </div>
     <!-- <div ng-include="'views/footerView.html'"></div> -->
@@ -61,12 +61,27 @@
     <script src="scripts/controllers/about.js"></script>
     <script src="scripts/lib/modernizr.custom.86080.js"></script>
     <script src="modules/login/loginModule.js"></script>
-
     <script src="modules/login/loginController.js"></script>
-  
+    <script src="modules/App_core/constants/urlConstant.js"></script>
     <script src="modules/signup/signupModule.js"></script>
     <script src="modules/signup/signupController.js"></script>
+    <script src="modules/profile/profileController.js"></script>
+    <!-- services start here -->
+    <script src="modules/App_core/services/urlManagementService.js"></script>
+    <script src="modules/App_core/services/AjaxService.js"></script>
+    <script src="modules/App_core/services/logUserService.js"></script>
+    <!-- services end here -->
     <!-- endbuild -->
+        <script type="text/javascript">
+        (function() {
+        var p = document.createElement('script');
+        p.type = 'text/javascript';
+        p.async = true;
+        p.src = "https://apis.google.com/js/client.js?onload=onLoadFunction";
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(p, s);
+    })();
+    </script>
 </body>
 
 </html>

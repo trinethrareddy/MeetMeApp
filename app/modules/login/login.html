@@ -1,59 +1,66 @@
-  
-  <div class="login-form"><md-card >
-            <md-content id="SignupContent" class="login-style" flex-sm>
-                <md-toolbar flex id="materialToolbar">
-                    <div class="md-toolbar-tools">
-                        <span flex=""></span>
-                        <span class="md-headline" align="center"><!-- <img src="../images/logo.png" height="30"> --></span>
-                        <span flex=""></span>
-                    </div>
-                </md-toolbar>
-                <div layout-padding="">
-                    <div></div>
-                    <form name="userForm">
-                        <input type="hidden" name="action" value="login" />
-                        <div layout="row" layout-sm="column">
-                            <md-input-container class="md-icon-float md-block" flex-gt-sm="">
-                                <!-- Use floating label instead of placeholder -->
-                                <label>Name</label>
-                                <md-icon md-svg-src="../images/icons/person.svg" class="name"></md-icon>
-                                <input ng-model="user.name" type="text">
-                            </md-input-container>
-                        </div>
-                        <div layout="row" layout-sm="column">
-                            <md-input-container class="md-icon-float md-block" flex-gt-sm="">
-                                <!-- Use floating label instead of placeholder -->
-                                <label>Password</label>
-                                <md-icon md-svg-src="../images/icons/lock.svg" class="name"></md-icon>
-                                <input ng-model="user.name" type="password">
-                            </md-input-container>
-                        </div>
-                        <md-button class="md-raised md-primary" style="width:100%; margin: 0px 0px;" type="submit" ng-disabled="userForm.$invalid" ng-click="fnLogin()">Login</md-button>
-                        <div layout="column" class="social-icon-section">
-                            <div layout='row' layout-align="center center">
-                                <span flex-lg="15" flex-md="15" flex-sm="15" flex-xs="15"><i class="fa fa-facebook login-icon" style="color: #3b5998;font-size: 20px;" ng-click='onFBLogin()' aria-hidden="true"><md-tooltip>FaceBook</md-tooltip></i></span>
-                                <span flex-lg="15" flex-md="15" flex-sm="15" flex-xs="15"><i class="fa fa-twitter login-icon" style="color: #1da1f2;font-size: 20px;" aria-hidden="true"><md-tooltip>Twitter</md-tooltip></i></span>
-                                <span flex-lg="15" flex-md="15" flex-sm="15" flex-xs="15"><i ng-click='onGoogleLogin()' style="color: #d6564b;font-size: 20px;" class="fa fa-google login-icon" aria-hidden="true"><md-tooltip>Google</md-tooltip></i></span>
-                                <span flex-lg="15" flex-md="15" flex-sm="15" flex-xs="15"><i class="fa fa-yahoo login-icon" style="font-size: 20px;color: #324fe1;" aria-hidden="true"><md-tooltip>Yahoo</md-tooltip></i></span>
-                            </div>
-                        </div>
-                        <div layout-padding="">
-                            <div layout="row" layout-xs="column">
-                                <div flex>
-                                    <div layout="row" layout-align="start none">
-                                        <a href="" class="links" ui-sref="app.signup">Sign Up</a>
-                                    </div>
-                                </div>
-                                <div flex>
-                                    <div layout="row" layout-align="end none">
-                                        <a href="" class="links">Forgot Password</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div layout="row"></div>
-                    </form>
+<div class="login-form">
+    <md-card>
+        <md-content id="SignupContent" class="login-style" flex-sm>
+            <md-toolbar flex id="materialToolbar">
+                <div class="md-toolbar-tools">
+                    <span flex=""></span>
+                    <span class="md-headline" align="center"><img src="../images/logo.png" height="30"></span>
+                    <span flex=""></span>
                 </div>
-            </md-content>
-        </md-card>
-        </div>
+            </md-toolbar>
+            <div layout-padding="">
+                <div></div>
+                <form name="loginForm" novalidate ng-submit="loginForm.$valid &&  fnLogin(user)">
+                    <input type="hidden" name="action" value="login" />
+                    <div layout="row" layout-sm="column">
+                        <md-input-container class="md-icon-float md-block" flex-gt-sm="">
+                            <!-- Use floating label instead of placeholder -->
+                            <label>Name</label>
+                            <md-icon md-svg-src="../images/icons/person.svg" class="name"></md-icon>
+                            <input ng-model="user.username" type="text" name="userName" required>
+                            <div ng-messages="loginForm.userName.$error">
+                                <div ng-message="required">This is required!</div>
+                            </div>
+                        </md-input-container>
+                    </div>
+                    <div layout="row" layout-sm="column">
+                        <md-input-container class="md-icon-float md-block" flex-gt-sm="">
+                            <!-- Use floating label instead of placeholder -->
+                            <label>Password</label>
+                            <md-icon md-svg-src="../images/icons/lock.svg" class="name"></md-icon>
+                            <input ng-model="user.password" type="password" name="password" required>
+                            <div ng-messages="loginForm.password.$error">
+                                <div ng-message="required">This is required!</div>
+                            </div>
+                        </md-input-container>
+                    </div>
+                    <md-button class="md-raised md-primary" style="width:100%; margin: 0px 0px;" type="submit" ng-disabled="loginForm.$invalid"
+                        >Login</md-button>
+                    <div layout="column" class="social-icon-section">
+                        <div layout='row' layout-align="center center">
+                            <span flex-lg="15" flex-md="15" flex-sm="15" flex-xs="15"><i class="fa fa-facebook login-icon" style="color: #3b5998;font-size: 20px;" ng-click='onFBLogin()' aria-hidden="true"><md-tooltip>FaceBook</md-tooltip></i></span>
+                            <span flex-lg="15" flex-md="15" flex-sm="15" flex-xs="15"><i class="fa fa-twitter login-icon" style="color: #1da1f2;font-size: 20px;" aria-hidden="true"><md-tooltip>Twitter</md-tooltip></i></span>
+                            <span flex-lg="15" flex-md="15" flex-sm="15" flex-xs="15"><i ng-click='onGoogleLogin()' style="color: #d6564b;font-size: 20px;" class="fa fa-google login-icon" aria-hidden="true"><md-tooltip>Google</md-tooltip></i></span>
+                            <span flex-lg="15" flex-md="15" flex-sm="15" flex-xs="15"><i class="fa fa-yahoo login-icon" style="font-size: 20px;color: #324fe1;" aria-hidden="true"><md-tooltip>Yahoo</md-tooltip></i></span>
+                        </div>
+                    </div>
+                    <div layout-padding="">
+                        <div layout="row" layout-xs="column">
+                            <div flex>
+                                <div layout="row" layout-align="start none">
+                                    <a href="" class="links" ui-sref="app.signup">Sign Up</a>
+                                </div>
+                            </div>
+                            <div flex>
+                                <div layout="row" layout-align="end none">
+                                    <a href="" class="links">Forgot Password ?</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div layout="row"></div>
+                </form>
+            </div>
+        </md-content>
+    </md-card>
+</div>

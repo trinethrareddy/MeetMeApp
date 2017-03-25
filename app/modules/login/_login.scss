@@ -12,14 +12,16 @@
 }
 
 .footer-login {
-    background-color: #3f51b5;
-    height: 70px;
+    background-color: rgba(63, 81, 181, 0.68);
+    height: 38px;
     z-index: 1;
     bottom: 0;
     width: 100%;
     position: fixed;
 }
-
+.zero-top-margin{
+    margin-top:0px;
+}
 .social-icon-section {
     padding-top: 4%;
 }
