@@ -9,5 +9,13 @@ angular.module('meetMeApp')
         AUTHENTICATION: {
             url: 'authenticate',
             method: 'POST'
+        },
+        GETUSERPROFILE: {
+            url: 'user/{token}/userProfile',
+            method: 'GET'
+        },
+        UPDATEUSERPROFILE: {
+            url: "user/{token}/updateUserProfile",
+            method: "POST"
         }
     });

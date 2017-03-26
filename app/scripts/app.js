@@ -13,6 +13,7 @@ angular
         'ngAnimate',
         'ngCookies',
         'ngResource',
+        'toaster',
         'ngSanitize',
         'ui.router',
         'ngMessages',
@@ -20,7 +21,7 @@ angular
         'meetMeApp.login',
         'meetMeApp.signup'
     ])
-    .config(function($stateProvider, $locationProvider, $urlRouterProvider) {
+    .config(function ($stateProvider, $locationProvider, $urlRouterProvider) {
         $locationProvider.hashPrefix('');
 
         $urlRouterProvider.otherwise("app/login");
@@ -29,7 +30,8 @@ angular
         $stateProvider
             .state('home', {
                 url: "/Home",
-                templateUrl: "views/home.html"
+                templateUrl: "views/home.html",
+                controller: "MainCtrl"
             })
             .state('home.features', {
                 url: "/Features",
@@ -41,17 +43,17 @@ angular
                 controller: "profileController"
             })
 
-        .state('home.download', {
-            url: "/Download",
-            templateUrl: "views/download.html"
-        })
+            .state('home.download', {
+                url: "/Download",
+                templateUrl: "views/download.html"
+            })
 
-        .state('home.security', {
-            url: "/Security",
-            templateUrl: "views/security.html"
-        })
+            .state('home.security', {
+                url: "/Security",
+                templateUrl: "views/security.html"
+            })
 
-        .state('home.faq', {
+            .state('home.faq', {
                 url: "/FAQ",
                 templateUrl: "views/faq.html"
             })
@@ -62,23 +64,28 @@ angular
             .state('app.login', {
                 url: "/login",
                 templateUrl: "./modules/login/login.html",
-                controller:"loginCtrl"
+                controller: "loginCtrl"
             })
 
-        .state('app.signup', {
-            url: "/SignUp",
-            templateUrl: "./modules/signup/signup.html",
-            controller: "signUpCtrl"
-        })
+            .state('app.signup', {
+                url: "/SignUp",
+                templateUrl: "./modules/signup/signup.html",
+                controller: "signUpCtrl"
+            })
 
+    }).run(function ($rootScope, $state, AlertService, $document) {
+        /*setting time out for the default toster*/
+        $rootScope.isDefaultToasterTimeOutValue = 3000;
+        /*toster default options*/
+        $rootScope.defaultToasterOptions = { 'time-out': $rootScope.isDefaultToasterTimeOutValue, 'extended-time-out': '0', 'close-button': true, 'animation-class': 'toast-top-right' };
     });
 
 
 //Google Login
 
-function onLoadFunction(){
+function onLoadFunction() {
     gapi.client.setApiKey('AIzaSyDeXfVywR8aZjQOKNl7mi05CJfdtR5a8E8');
-    gapi.client.load('plus','v1',function(){});
+    gapi.client.load('plus', 'v1', function () { });
 }
 
 

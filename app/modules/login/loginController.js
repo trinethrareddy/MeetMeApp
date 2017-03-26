@@ -2,7 +2,7 @@
 	'use strict';
 	angular
 		.module('meetMeApp.login')
-		.controller('loginCtrl', ['$scope', '$state', 'urlConstant', 'urlService', 'logService', '$cookies', function ($scope, $state, urlConstant, urlService, logService, $cookies) {
+		.controller('loginCtrl', ['$scope', '$state', 'urlConstant', 'urlService', 'logService', '$cookies','AlertService', function ($scope, $state, urlConstant, urlService, logService, $cookies,AlertService) {
 			console.log("urlConstant::", urlConstant);
 			$scope.fnLogin = function (user) {
 				urlService.authentication(user).then(function (data) {
@@ -11,6 +11,7 @@
 						loggedInUser.from = "native"
 						$cookies.putObject('loggedInUser', loggedInUser);
 						logService.setoreLoggedUser(data.data);
+						AlertService.showAlert("Successfully Logged In", 1);
 						$state.go('home.profile');
 					} else {
 
@@ -26,11 +27,12 @@
 							$scope.$apply(function () {
 								console.log(response);
 								if (response) {
+									$state.go('home.profile');
 									var loggedInUser = response;
 									loggedInUser.from = "fb"
 									$cookies.putObject('loggedInUser', loggedInUser);
 									logService.setoreLoggedUser(response);
-									$state.go('home.profile');
+									AlertService.showAlert("Successfully Logged in with Facebook", 1);
 								}
 							});
 						});
@@ -72,23 +74,16 @@
 									gmail.img_url = resp.image.url;
 									gmail.gender = resp.gender;
 									gmail.language = resp.language;
-									// dataFactory.updateInfo('Google', { username: $scope.gmail.username, email: $scope.gmail.email, image: $scope.g_image });
-									// $scope.googleDetails = dataFactory.getInfo('Google');
-									// console.log($scope.googleDetails);
-									// $scope.authenticateGetDetails = AuthenticateService.authenticateGetDetails($scope.permission);
-									// console.log($scope.authenticateDetails);
-									// $scope.authenticateSetDetails = AuthenticateService.authenticateSetDetails();
-									// console.log($scope.authenticateSetDetails);
 									var loggedInUser = {};
 									loggedInUser = gmail;
 									loggedInUser.from = 'google';
 									$cookies.putObject('loggedInUser', loggedInUser);
-									// $state.go('homepage');
 									if ((gmail.username === resp.displayName) && (gmail.email === resp.emails[0].value) && (gmail.img_url === resp.image.url)) {
-										// $state.go('homepage');
+										$state.go('home.profile');
+										AlertService.showAlert("Successfully Logged in with Gmail", 1);
 										logService.setoreLoggedUser(loggedInUser);
 										console.log("loggedInUser:::", loggedInUser);
-										$state.go('home.profile');
+										
 									}
 								});
 							});

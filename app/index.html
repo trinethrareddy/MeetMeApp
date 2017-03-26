@@ -10,6 +10,7 @@
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+    <link rel="stylesheet" href="bower_components/AngularJS-Toaster/toaster.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -27,6 +28,7 @@
     <div class="viewpage">
         <div ui-view></div>
     </div>
+    <toaster-container toaster-options=defaultToasterOptions></toaster-container >
     <!-- <div ng-include="'views/footerView.html'"></div> -->
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>
@@ -53,9 +55,11 @@
     <script src="bower_components/angular-aria/angular-aria.js"></script>
     <script src="bower_components/angular-messages/angular-messages.js"></script>
     <script src="bower_components/angular-material/angular-material.js"></script>
+    <script src="bower_components/AngularJS-Toaster/toaster.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIrHlc3joL-Zc_aezfYnKW2UExH_kVVrI"></script>
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/about.js"></script>
@@ -66,9 +70,11 @@
     <script src="modules/signup/signupModule.js"></script>
     <script src="modules/signup/signupController.js"></script>
     <script src="modules/profile/profileController.js"></script>
+    <script src="modules/profile/profileService.js"></script>
     <!-- services start here -->
     <script src="modules/App_core/services/urlManagementService.js"></script>
     <script src="modules/App_core/services/AjaxService.js"></script>
+    <script src="modules/App_core/services/AlertService.js"></script>
     <script src="modules/App_core/services/logUserService.js"></script>
     <!-- services end here -->
     <!-- endbuild -->

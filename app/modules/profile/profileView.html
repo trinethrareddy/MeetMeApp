@@ -15,7 +15,7 @@
             </md-tab>
             <md-tab label="About" ng-click="fnGetLocation()">
               <md-content class="md-padding custm-tab-content">
-                <form name="aboutUserForm" novalidate ng-submit="aboutUserForm.$valid &&  fnUpdateUserDetails(user)">
+                <form name="aboutUserForm" novalidate ng-submit="aboutUserForm.$valid && fnUpdateUserDetails(user)">
                   <div layout-gt-sm="row">
                     <md-input-container class="md-block" flex-gt-sm>
                       <label>First Name</label>
@@ -46,14 +46,14 @@
                   </div>
                   <md-input-container class="md-icon-float md-block" flex-gt-sm="">
                     <label>Mobile Number</label>
-                    <input ng-model="activeUser.mobileNumber" type="number" name="mobileNumber" required>
+                    <input ng-model="activeUser.mobileNumber" type="text" name="mobileNumber" required>
                     <div ng-messages="aboutUserForm.mobileNumber.$error">
                       <div ng-message="required">This is required!</div>
                     </div>
                   </md-input-container>
                   <md-input-container class="md-icon-float md-block" flex-gt-sm="">
                     <label>Age</label>
-                    <input ng-model="activeUser.age" type="text" name="age" required>
+                    <input ng-model="activeUser.age" type="number" name="age" required>
                     <div ng-messages="aboutUserForm.age.$error">
                       <div ng-message="required">This is required!</div>
                     </div>
@@ -90,5 +90,5 @@
       </div>
     </div>
   </div>
-  <!--<pre>{{loggedUser | json}}</pre>-->
+  <!--<pre>{{test | json}}</pre>-->
 </div>
