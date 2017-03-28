@@ -4,7 +4,7 @@
             <md-toolbar flex id="materialToolbar">
                 <div class="md-toolbar-tools">
                     <span flex=""></span>
-                    <span class="md-headline" align="center"><img src="../images/logo.png" height="30"></span>
+                    <span class="md-headline" align="center"><img ng-src="images/logo.png" height="30"></span>
                     <span flex=""></span>
                 </div>
             </md-toolbar>
@@ -16,7 +16,7 @@
                         <md-input-container class="md-icon-float md-block" flex-gt-sm="">
                             <!-- Use floating label instead of placeholder -->
                             <label>Name</label>
-                            <md-icon md-svg-src="../images/icons/person.svg" class="name"></md-icon>
+                            <md-icon md-svg-src="images/icons/person.svg" class="name"></md-icon>
                             <input ng-model="user.username" type="text" name="userName" required>
                             <div ng-messages="loginForm.userName.$error">
                                 <div ng-message="required">This is required!</div>
@@ -27,7 +27,7 @@
                         <md-input-container class="md-icon-float md-block" flex-gt-sm="">
                             <!-- Use floating label instead of placeholder -->
                             <label>Password</label>
-                            <md-icon md-svg-src="../images/icons/lock.svg" class="name"></md-icon>
+                            <md-icon md-svg-src="images/icons/lock.svg" class="name"></md-icon>
                             <input ng-model="user.password" type="password" name="password" required>
                             <div ng-messages="loginForm.password.$error">
                                 <div ng-message="required">This is required!</div>
@@ -53,7 +53,7 @@
                             </div>
                             <div flex>
                                 <div layout="row" layout-align="end none">
-                                    <a href="" class="links">Forgot Password ?</a>
+                                    <a href="" class="links" ng-click="showAlert()">Forgot Password ?</a>
                                 </div>
                             </div>
                         </div>
