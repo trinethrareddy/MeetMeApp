@@ -1,1 +1,85 @@
-<div>Features</div>
+<div layout="row" md-theme = 'buttondefault'>
+        <div flex-offset-lg="20" flex-offset-md="20" flex-offset-sm="20" flex-offset-xs="20" flex-lg="50" flex-md="50" flex-sm="50"
+            flex-xs="50">
+            <md-card>
+                <md-card-content>
+                    <div layout="row">
+                        <div flex-lg="15" flex-md="15" flex-sm="15" flex-xs="15">
+                        </div>
+                        <div flex-lg="70" flex-md="70" flex-sm="70" flex-xs="70">
+                            <p class="title-color">Men&Women near Hyderabad</p>
+                        </div>
+                        <div flex-offset-lg="15" flex-offset-md="15" flex-offset-sm="15" flex-offset-xs="15" flex-lg="15" flex-md="15" flex-sm="15" flex-xs="15">
+                            <div flex-offset-lg="80" flex-offset-md="80" flex-offset-sm="80" flex-offset-xs="80">
+                            <i class="material-icons">keyboard_arrow_up</i>
+                            </div>
+                        </div>
+                    </div>
+                    <div layout="column" flex-lg="100" flex-md="100" flex-sm="100" flex-xs="100">
+                        <md-input-container>
+                            <label>Search Location</label>
+                            <input type="text" ng-model="searchlocation" placeholder="hyderabad">
+                        </md-input-container>
+                    </div>
+                    <div layout="column" flex-lg="100" flex-md="100" flex-sm="100" flex-xs="100">
+                        <label>I want to see</label>
+                        <div layout="row">
+                            <div flex-lg="33" flex-md="33" flex-sm="33" flex-xs="33" style="border: 1px solid black;height: 35px;">
+                                <md-button class="md-primary">Men</md-button>
+                            </div>
+                            <div flex-lg="33" flex-md="33" flex-sm="33" flex-xs="33" style="border: 1px solid black;height: 35px;">
+                                <md-button class="md-primary">Women</md-button>
+                            </div>
+                            <div flex-lg="33" flex-md="33" flex-sm="33" flex-xs="33" style="border: 1px solid black;height: 35px;">
+                                <md-button class="md-primary">Both</md-button>
+                            </div>
+                        </div>
+                    </div>
+                    <div layout='column' flex-lg="100" flex-md="100" flex-sm="100" flex-xs="100" style="margin-top: 10px;">
+                        <label>Who Are:</label>
+                            <div layout='row'>
+                                <div flex-lg="50" flex-md="50" flex-sm="50" flex-xs="50">
+                                    <md-checkbox class="md-primary" ng-model="noprefernce" aria-label="noprefernce">
+                                        No Prefernce
+                                    </md-checkbox>
+                                </div>
+                                <div flex-lg="50" flex-md="50" flex-sm="50" flex-xs="50">
+                                    <md-checkbox class="md-primary" ng-model="bisexual" aria-label="bisexual">
+                                        Bisexual
+                                    </md-checkbox>
+                                </div>
+                            </div>
+                            <div layout='row'>
+                                <div flex-lg="50" flex-md="50" flex-sm="50" flex-xs="50">
+                                    <md-checkbox class="md-primary" ng-model="straight" aria-label="straight">
+                                        Straight
+                                    </md-checkbox>
+                                </div>
+                                <div flex-lg="50" flex-md="50" flex-sm="50" flex-xs="50">
+                                    <md-checkbox class="md-primary" ng-model="gay" aria-label="gay">
+                                        Gay
+                                    </md-checkbox>
+                                </div>
+                            </div>
+                            <div layout='column' flex-lg="100" flex-md="100" flex-sm="100" flex-xs="100">
+                                <label>Between the ages of:</label>
+                                <md-slider class="md-primary" ng-model="myValue" min="5" max="500"></md-slider>
+                                <!--<input id="input.slider" type="text" class="span2" value="" data-slider-min="10" data-slider-max="1000" data-slider-step="5" data-slider-value="[250,450]"/>-->
+                            </div>
+                            <div layout='column' flex-lg="100" flex-md="100" flex-sm="100" flex-xs="100">
+                                 <md-checkbox class="md-primary" ng-model="showonline" aria-label="showonline" >
+                                       Show online members only
+                                    </md-checkbox>
+                            </div>
+                </md-card-content>
+                <md-card-footer>
+                    <div flex-offset-lg="40" flex-offset-md="40" flex-offset-sm="40" flex-offset-xs="40" flex-lg="20" flex-md="20" flex-sm="20"
+            flex-xs="20">
+                    <md-button style="background-color: #58b833;">Ok</md-button>
+                    </div>
+                </md-card-footer>
+            </md-card>
+        </div>
+        <div flex-lg="30" flex-md="30" flex-sm="30" flex-xs="30">
+        </div>
+    </div>
