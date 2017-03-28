@@ -5,20 +5,19 @@
         .controller('loginCtrl', ['$scope', '$state', 'urlConstant', 'urlService', 'logService', '$cookies','AlertService', function ($scope, $state, urlConstant, urlService, logService, $cookies,AlertService) {
             console.log("urlConstant::", urlConstant);
             $scope.fnLogin = function (user) {
-                $state.go('home.profile');
-                // urlService.authentication(user).then(function (data) {
-                //     if (data.status === 200 && data.data) {
-                //         var loggedInUser = data.data;
-                //         loggedInUser.from = "native"
-                //         $cookies.putObject('loggedInUser', loggedInUser);
-                //         logService.setoreLoggedUser(data.data);
-                //         AlertService.showAlert("Successfully Logged In", 1);
-                //         $state.go('home.profile');
-                //     } else {
+                urlService.authentication(user).then(function (data) {
+                    if (data.status === 200 && data.data) {
+                        var loggedInUser = data.data;
+                        loggedInUser.from = "native"
+                        $cookies.putObject('loggedInUser', loggedInUser);
+                        logService.setoreLoggedUser(data.data);
+                        AlertService.showAlert("Successfully Logged In", 1);
+                        $state.go('home.profile');
+                    } else {
 
-                //     }
-                //     console.log("Data:::", data);
-                // });
+                    }
+                    console.log("Data:::", data);
+                });
                 // $state.go('home');
             }
             $scope.onFBLogin = function () {
