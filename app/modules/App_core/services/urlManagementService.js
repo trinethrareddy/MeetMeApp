@@ -3,7 +3,8 @@
         angular.module('meetMeApp').service('urlService', function (urlConstant,AjaxService) {
             return {
                 userRegistration: _userRegistration,
-                authentication: _authentication
+                authentication: _authentication,
+                forgotUserPassword:_forgotUserPassword
             }
             /** Get Url obj by dynamic start here */
             function getUrlByKey(urlKey) {
@@ -21,6 +22,11 @@
 
             function _authentication(payload) {
                 var urlKey = "AUTHENTICATION";
+                var urlObj = getUrlByKey(urlKey);
+                return AjaxService.send(urlObj.url,urlObj.method,payload);
+            };
+            function _forgotUserPassword(payload){
+                var urlKey = "FORGOTPASSWORD";
                 var urlObj = getUrlByKey(urlKey);
                 return AjaxService.send(urlObj.url,urlObj.method,payload);
             }

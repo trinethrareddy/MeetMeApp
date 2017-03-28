@@ -17,5 +17,8 @@ angular.module('meetMeApp')
         UPDATEUSERPROFILE: {
             url: "user/{token}/updateUserProfile",
             method: "POST"
+        },
+        FORGOTPASSWORD:{
+            url:""
         }
     });
