@@ -18,7 +18,6 @@ angular
         'ui.router',
         'ngMessages',
         'ngMaterial',
-        'meetMeApp.login',
         'meetMeApp.signup'
     ])
     .config(function ($stateProvider, $locationProvider, $urlRouterProvider) {
