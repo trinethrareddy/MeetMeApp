@@ -1,36 +1,9 @@
-.signup-div{
-	.signup-image-div{
-		height: 600px;
-		.signup-image-class{
-			height: 450px;
-			margin-right: 40px;
-		}
-		.signup-button{
-			width: 250px;
-		}
+.signup-form{
+	md-content{
+	 width: 400px;
+    box-shadow: 0px 0px 17px 7px #888888;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.83);
+    z-index:2000;
 	}
-	.signup-footer-div{
-		text-align: center;
-		.signup-icon-div{
-			margin-top: 20px;
-			.signup-icon{
-				margin-left: 10px;
-				color: #5f90db;
-				font-size: 25px;
-			}
-			.signup-icon-class{
-				margin-left: 20px;
-				color: #5f90db;
-				font-size: 25px;
-			}
-		}
-	}
-	
 }
-
-
-.signup-button-div{
-	text-align: center;
-
-	}
-

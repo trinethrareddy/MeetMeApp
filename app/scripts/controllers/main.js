@@ -8,10 +8,9 @@
  * Controller of the meetMeApp
  */
 angular.module('meetMeApp')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('MainCtrl', function ($scope,$state,AlertService) {
+    $scope.fnLogOut = function(){
+      $state.go("app.login");
+      AlertService.showAlert("Successfully Logged Out", 2);
+    }
   });

@@ -1,73 +1,67 @@
-<ul class="cb-slideshow">
-    <li><span>Image 01</span></li>
-    <li><span>Image 02</span></li>
-    <li><span>Image 03</span></li>
-    <li><span>Image 04</span></li>
-    <li><span>Image 05</span></li>
-    <li><span>Image 06</span></li>
-    <div ng-cloak="" layout="column" layout-sm="row" layout-align="center center" layout-align-sm="start start" layout-fill>
+
+<div class="login-form">
+    <md-card>
         <md-content id="SignupContent" class="login-style" flex-sm>
             <md-toolbar flex id="materialToolbar">
                 <div class="md-toolbar-tools">
                     <span flex=""></span>
-                    <span class="md-headline" align="center"><!-- <img src="../images/logo.png" height="30"> --></span>
+                    <span class="md-headline" align="center"><img ng-src="images/logo.png" height="30"></span>
                     <span flex=""></span>
                 </div>
             </md-toolbar>
             <div layout-padding="">
                 <div></div>
-                <form name="userForm">
+                <form name="loginForm" novalidate ng-submit="loginForm.$valid &&  fnLogin(user)">
                     <input type="hidden" name="action" value="login" />
                     <div layout="row" layout-sm="column">
-                        <!-- <md-input-container flex-gt-sm="">
-                        <label>Email</label>
-                        <input required type="email" name="email" ng-model="user.email" ng-pattern="/^[_a-z0-9-+]+(\.[_a-z0-9-+]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" placeholder="someone@example.com" />
-                        <div ng-if="userForm.email.$dirty" ng-messages="userForm.email.$error" role="alert">
-                            <div ng-message="required" class="my-message">You can't Login without Email Address.</div>
-                            <div ng-message-exp="['email', 'pattern']">You can't Login with wrong Email Address pattern.</div>
-                        </div>
-                    </md-input-container> -->
                         <md-input-container class="md-icon-float md-block" flex-gt-sm="">
                             <!-- Use floating label instead of placeholder -->
                             <label>Name</label>
-                            <md-icon md-svg-src="../images/icons/person.svg" class="name"></md-icon>
-                            <input ng-model="user.name" type="text">
+                            <md-icon md-svg-src="images/icons/person.svg" class="name"></md-icon>
+                            <input ng-model="user.username" type="text" name="userName" required>
+                            <div ng-messages="loginForm.userName.$error">
+                                <div ng-message="required">This is required!</div>
+                            </div>
                         </md-input-container>
                     </div>
                     <div layout="row" layout-sm="column">
-                        <!--   <md-input-container flex-gt-sm="">
-                            <label>Password</label>
-                            <input name="password" ng-model="user.password" type="password" minlength="8" maxlength="100" ng-pattern="/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/" required placeholder="********">
-                            <div ng-if="userForm.password.$dirty" ng-messages="userForm.password.$error" role="alert" multiple>
-                                <div ng-message="required">You can't Login without Password.</div>
-                                <div ng-message-exp="['minlength', 'maxlength', 'pattern']">There is no password in our database with this pattern. All password contains at least one number, one lowercase and one uppercase character.</div>
-                            </div>
-                        </md-input-container> -->
                         <md-input-container class="md-icon-float md-block" flex-gt-sm="">
                             <!-- Use floating label instead of placeholder -->
                             <label>Password</label>
-                            <md-icon md-svg-src="../images/icons/lock.svg" class="name"></md-icon>
-                            <input ng-model="user.name" type="password">
+                            <md-icon md-svg-src="images/icons/lock.svg" class="name"></md-icon>
+                            <input ng-model="user.password" type="password" name="password" required>
+                            <div ng-messages="loginForm.password.$error">
+                                <div ng-message="required">This is required!</div>
+                            </div>
                         </md-input-container>
                     </div>
-                    <md-button class="md-raised md-primary" style="width:100%; margin: 0px 0px;" type="submit" ng-disabled="userForm.$invalid" ng-click="fnLogin()">Login</md-button>
+                    <md-button class="md-raised md-primary" style="width:100%; margin: 0px 0px;" type="submit" ng-disabled="loginForm.$invalid"
+                        >Login</md-button>
+                    <div layout="column" class="social-icon-section">
+                        <div layout='row' layout-align="center center">
+                            <span flex-lg="15" flex-md="15" flex-sm="15" flex-xs="15"><i class="fa fa-facebook login-icon" style="color: #3b5998;font-size: 20px;" ng-click='onFBLogin()' aria-hidden="true"><md-tooltip>FaceBook</md-tooltip></i></span>
+                            <span flex-lg="15" flex-md="15" flex-sm="15" flex-xs="15"><i class="fa fa-twitter login-icon" style="color: #1da1f2;font-size: 20px;" aria-hidden="true"><md-tooltip>Twitter</md-tooltip></i></span>
+                            <span flex-lg="15" flex-md="15" flex-sm="15" flex-xs="15"><i ng-click='onGoogleLogin()' style="color: #d6564b;font-size: 20px;" class="fa fa-google login-icon" aria-hidden="true"><md-tooltip>Google</md-tooltip></i></span>
+                            <span flex-lg="15" flex-md="15" flex-sm="15" flex-xs="15"><i class="fa fa-yahoo login-icon" style="font-size: 20px;color: #324fe1;" aria-hidden="true"><md-tooltip>Yahoo</md-tooltip></i></span>
+                        </div>
+                    </div>
                     <div layout-padding="">
                         <div layout="row" layout-xs="column">
                             <div flex>
-                              <div layout="row"  layout-align="start none" >
-                               <a href="" class="links" ui-sref="signup">Sign Up</a>
-                               </div>
+                                <div layout="row" layout-align="start none">
+                                    <a href="" class="links" ui-sref="app.signup">Sign Up</a>
+                                </div>
                             </div>
                             <div flex>
-                            <div layout="row"  layout-align="end none">
-                                 <a href="" class="links">Forgot Password</a>
-                                 </div>
+                                <div layout="row" layout-align="end none">
+                                    <a href="" class="links" ng-click="showAlert()">Forgot Password ?</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div layout="row"></div>
+                </form>
             </div>
-            </form>
-    </div>
-    </md-content>
-</ul>
+        </md-content>
+    </md-card>
+</div>

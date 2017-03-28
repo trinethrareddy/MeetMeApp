@@ -2,9 +2,10 @@
     'use strict';
     angular
         .module('meetMeApp.login', ['ngAnimate']);
+        
    window.fbAsyncInit = function() {
     FB.init({
-      appId      : '566081316934628',
+      appId      : '241453776316587',
       xfbml      : true,
       version    : 'v2.8'
     });

@@ -10,11 +10,13 @@
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+    <link rel="stylesheet" href="bower_components/AngularJS-Toaster/toaster.css" />
+    <link rel="stylesheet" href="bower_components/sweetalert/dist/sweetalert.css" />
+    <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.css">
     <!-- endbuild -->
 </head>
 
@@ -24,9 +26,10 @@
     <![endif]-->
     <!-- Add your site or application content here -->
    <!--  <div ng-include="'views/header.html'"></div> -->
-    <div class="container-fluid viewpage">
+    <div class="viewpage">
         <div ui-view></div>
     </div>
+    <toaster-container toaster-options=defaultToasterOptions></toaster-container >
     <!-- <div ng-include="'views/footerView.html'"></div> -->
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>
@@ -53,20 +56,40 @@
     <script src="bower_components/angular-aria/angular-aria.js"></script>
     <script src="bower_components/angular-messages/angular-messages.js"></script>
     <script src="bower_components/angular-material/angular-material.js"></script>
+    <script src="bower_components/AngularJS-Toaster/toaster.js"></script>
+    <script src="bower_components/sweetalert/dist/sweetalert.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIrHlc3joL-Zc_aezfYnKW2UExH_kVVrI"></script>
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/about.js"></script>
     <script src="scripts/lib/modernizr.custom.86080.js"></script>
-    <script src="modules/login/loginController.js"></script>
     <script src="modules/login/loginModule.js"></script>
-    <script src="modules/App_core/constants/urlConstants.js"></script>
-  
+    <script src="modules/login/loginController.js"></script>
+    <script src="modules/App_core/constants/urlConstant.js"></script>
     <script src="modules/signup/signupModule.js"></script>
     <script src="modules/signup/signupController.js"></script>
+    <script src="modules/profile/profileController.js"></script>
+    <script src="modules/profile/profileService.js"></script>
+    <!-- services start here -->
+    <script src="modules/App_core/services/urlManagementService.js"></script>
+    <script src="modules/App_core/services/AjaxService.js"></script>
+    <script src="modules/App_core/services/AlertService.js"></script>
+    <script src="modules/App_core/services/logUserService.js"></script>
+    <!-- services end here -->
     <!-- endbuild -->
+        <script type="text/javascript">
+        (function() {
+        var p = document.createElement('script');
+        p.type = 'text/javascript';
+        p.async = true;
+        p.src = "https://apis.google.com/js/client.js?onload=onLoadFunction";
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(p, s);
+    })();
+    </script>
 </body>
 
 </html>
