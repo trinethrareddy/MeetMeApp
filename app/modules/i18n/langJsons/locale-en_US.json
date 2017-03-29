@@ -1,0 +1,23 @@
+{
+    "global":{
+        "name":"Name",
+        "password":"Password",
+        "requiredText":"This is required!",
+        "ok":"Ok",
+        "cancel":"Cancel",
+        "forgotPassword":"Forgot Password",
+        "entreEamilLabel": "Please enter your password here"
+    },
+    "social": {
+        "facebook":"FaceBook",
+        "google":"Google",
+        "twitter":"Twitter",
+        "yahoo":"Yahoo"
+    },
+    "loginView":{
+        "loginBtn":"Login",
+        "forgotLink":"Forgot Password ?",
+        "signUpLink":"Sign Up"
+    },
+    "directives.language-select.Language": "Language"
+}

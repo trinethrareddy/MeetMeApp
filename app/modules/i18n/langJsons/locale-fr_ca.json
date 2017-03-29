@@ -1,0 +1,23 @@
+{
+    "global":{
+        "name":"Nom",
+        "password":"Mot de passe",
+        "requiredText":"C'est requis !",
+        "ok":"Ok",
+        "cancel":"Annuler", 
+        "forgotPassword":"Mot de passe oublié",
+        "entreEamilLabel": "Veuillez entrer votre mot de passe ici"
+    },
+    "social": {
+        "facebook":"FaceBook",
+        "google":"Google",
+        "twitter":"Twitter",
+        "yahoo":"Yahoo"
+    },
+    "loginView":{
+        "loginBtn":"Ouverture de session",
+        "forgotLink":"Mot de passe oublié ?",
+        "signUpLink":"Inscrivez-vous"
+    },
+    "directives.language-select.Language": "Langue"
+} 

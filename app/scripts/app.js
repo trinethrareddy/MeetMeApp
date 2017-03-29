@@ -18,6 +18,7 @@ angular
         'ui.router',
         'ngMessages',
         'ngMaterial',
+        'meetMeApp.localization',
         'meetMeApp.login',
         'meetMeApp.signup'
     ])

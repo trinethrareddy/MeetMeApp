@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>MeetMeWeb</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -58,6 +58,12 @@
     <script src="bower_components/angular-material/angular-material.js"></script>
     <script src="bower_components/AngularJS-Toaster/toaster.js"></script>
     <script src="bower_components/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="bower_components/angular-translate/angular-translate.js"></script>
+    <script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
+    <script src="bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
+    <script src="bower_components/angular-translate-storage-local/angular-translate-storage-local.js"></script>
+    <script src="bower_components/angular-translate-handler-log/angular-translate-handler-log.js"></script>
+    <script src="bower_components/angular-dynamic-locale/src/tmhDynamicLocale.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
@@ -69,16 +75,23 @@
     <script src="modules/login/loginModule.js"></script>
     <script src="modules/login/loginController.js"></script>
     <script src="modules/App_core/constants/urlConstant.js"></script>
-    <script src="modules/signup/signupModule.js"></script>
     <script src="modules/signup/signupController.js"></script>
     <script src="modules/profile/profileController.js"></script>
     <script src="modules/profile/profileService.js"></script>
+    <!-- Module References start here -->
+    <script src="modules/signup/signupModule.js"></script>
+    <script src="modules/i18n/appLocalizationModule.js"></script>
+    <!-- Module References end here -->
     <!-- services start here -->
     <script src="modules/App_core/services/urlManagementService.js"></script>
     <script src="modules/App_core/services/AjaxService.js"></script>
     <script src="modules/App_core/services/AlertService.js"></script>
     <script src="modules/App_core/services/logUserService.js"></script>
+    <script src="modules/i18n/services/localeService.js"></script>
     <!-- services end here -->
+    <!-- Directives reference start here-->
+    <script src="modules/i18n/directives/languageLocaleDirective.js"></script>
+    <!-- Directives reference end here-->
     <!-- endbuild -->
         <script type="text/javascript">
         (function() {
